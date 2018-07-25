@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+        <link rel="stylesheet" href="main.css">
+        <script
+			src="https://code.jquery.com/jquery-3.3.1.slim.js"
+			integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+			crossorigin="anonymous"></script>
+        <script>
+            $(document)
+                .ready(function () {
+                    // fix menu when passed
+                    $('.masthead')
+                        .visibility({
+                            once: false,
+                            onBottomPassed: function () {
+                                $('.fixed.menu').transition('fade in');
+                            },
+                            onBottomPassedReverse: function () {
+                                $('.fixed.menu').transition('fade out');
+                            }
+                        })
+                    ;
+                    // create sidebar and attach to menu open
+                    $('.ui.sidebar')
+                    .sidebar('attach events', '.toc.item')
+                ;
+            });
+        </script>
+        <style type="text/css">
+            .masthead.segment {
+                min-height: 700px;
+                padding: 1em 0em;
+            }
+            .hidden.menu {
+                display: none;
+            }
+            .masthead h1.ui.header {
+                margin-top: 3em;
+                margin-bottom: 0em;
+                font-size: 4em;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+        <!-- Top menu -->
+        <div class="ui container">
+            <div class="inverted ui large top fixed hidden menu">
+                <div class="ui container">
+                    <a class="active item">Home</a>
+                    <a class="item" href="about.html">About Us</a>
+                    <a class="item" href="faq.html">FAQ</a>
+                    <a class="item">Contact Us</a>
+                    <div class="right menu">
+                        <div class="item">
+                            <a class="ui right floated positive animated button" tabindex="0" href="join.html">
+                                <div class="visible content">Join our mailing list!</div>
+                                <div class="hidden content">
+                                    <i class="right arrow icon"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- Side menu -->
+        <div class="ui vertical inverted sidebar menu">
+            <a class="active item">Home</a>
+            <a class="item" href="about.html">About Us</a>
+            <a class="item" href="faq.html">FAQ</a>
+            <a class="item">Contact Us</a>
+            <a class="item" href="join.html">Join our mailing list!</a>
+        </div>
+        <div class ="pusher">
+            <div class="ui inverted vertical masthead center aligned segment">
+                <div class="ui container">
+                    <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                        <i class="sidebar icon"></i>
+                    </a>
+                    <a class="active item">Home</a>
+                    <a class="item" href="about.html">About Us</a>
+                    <a class="item" href="faq.html">FAQ</a>
+                    <a class="item">Contact Us</a>
+                    <div class="right item">
+                        <div class="item">
+                            <button class="ui right floated positive animated button" tabindex="0" href="join.html">
+                                <div class="visible content" >Join our mailing list!</div>
+                                <div class="hidden content">
+                                    <i class="right arrow icon"></i>
+                                </div>
+                            </button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui text container">
+                <h1 class="ui huge inverted header">
+                    Minerva
+                </h1>
+                <h2>Break the blockchain</h2>
+                <a class="ui huge positive button" href="join.html">Join our mailing list! <i class="right arrow icon"></i></a>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
